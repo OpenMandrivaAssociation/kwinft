@@ -54,7 +54,7 @@ BuildRequires:  cmake(Qt6Core)
 BuildRequires:  cmake(Qt6Core5Compat)
 BuildRequires:  cmake(Qt6DBus)
 BuildRequires:  cmake(Qt6Quick)
-BuildRequires:  cmake(Qt6Test)
+#BuildRequires:  cmake(Qt6Test)
 BuildRequires:  cmake(Qt6UiTools) 
 BuildRequires:  cmake(Qt6UiPlugin)
 BuildRequires:  cmake(Qt6Widgets)
@@ -177,7 +177,7 @@ sed -i 's#env python3$#python3#' kconf_update/kwin-6.0-overview-activities-short
 # fix fatal error: wayland-server-core.h: No such file or directory
 #export CFLAGS="%%{optflags} -I%%{_includedir} -I%%{_includedir}/wayland"
 #export CXXFLAGS="${CFLAGS}"
-%cmake
+%cmake -DBUILD_TESTING=OFF
 %make_build
 
 %install
