@@ -1,0 +1,39 @@
+diff --git a/lib/base/backend/wlroots/output.h b/lib/base/backend/wlroots/output.h
+index 6e08cc677d..59e9200292 100644
+--- a/lib/base/backend/wlroots/output.h
++++ b/lib/base/backend/wlroots/output.h
+@@ -8,7 +8,7 @@
+ #include "base/utils.h"
+ #include "base/wayland/output.h"
+ 
+-#include <wayland-server-core.h>
++#include <wayland/wayland-server-core.h>
+ 
+ extern "C" {
+ #define static
+diff --git a/lib/base/seat/backend/wlroots/session.h b/lib/base/seat/backend/wlroots/session.h
+index d681100013..0263ccdcf8 100644
+--- a/lib/base/seat/backend/wlroots/session.h
++++ b/lib/base/seat/backend/wlroots/session.h
+@@ -9,7 +9,7 @@
+ #include "base/utils.h"
+ 
+ #include <vector>
+-#include <wayland-server-core.h>
++#include <wayland/wayland-server-core.h>
+ 
+ struct wlr_backend;
+ struct wlr_device;
+diff --git a/lib/base/utils.h b/lib/base/utils.h
+index 153b768c72..0d92b09a8c 100644
+--- a/lib/base/utils.h
++++ b/lib/base/utils.h
+@@ -5,7 +5,7 @@
+ */
+ #pragma once
+ 
+-#include <wayland-server-core.h>
++#include <wayland/wayland-server-core.h>
+ 
+ namespace KWin::base
+ {
