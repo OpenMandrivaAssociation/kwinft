@@ -16,7 +16,7 @@ Source:         %{url}/-/archive/%{commit}/%{name}-%{commit}.tar.bz2
 Patch1:         soversion.patch
 Patch2:         path.patch
 BuildRequires:  fdupes
-BuildRequires;  catch2
+BuildRequires:  catch2
 BuildRequires:  cmake(Qt6)
 BuildRequires:  cmake(KF6)
 BuildRequires:  pkgconfig(libcap)
