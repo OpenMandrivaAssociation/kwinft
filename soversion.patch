@@ -1,0 +1,143 @@
+diff --git a/kcms/common/CMakeLists.txt b/kcms/common/CMakeLists.txt
+index 04c8c62ab2..e33955d410 100644
+--- a/kcms/common/CMakeLists.txt
++++ b/kcms/common/CMakeLists.txt
+@@ -28,7 +28,7 @@ target_link_libraries(kcmkwincommon
+ 
+ set_target_properties(kcmkwincommon PROPERTIES
+     VERSION ${CMAKE_PROJECT_VERSION}
+-    SOVERSION ${CMAKE_PROJECT_VERSION_MAJOR}
++    SOVERSION 6
+ )
+ 
+ install(TARGETS kcmkwincommon LIBRARY NAMELINK_SKIP)
+diff --git a/lib/CMakeLists.txt b/lib/CMakeLists.txt
+index fc23384ade..3a3356f126 100644
+--- a/lib/CMakeLists.txt
++++ b/lib/CMakeLists.txt
+@@ -88,7 +88,7 @@ target_sources(wayland
+ 
+ set_target_properties(x11 wayland PROPERTIES
+    VERSION ${CMAKE_PROJECT_VERSION}
+-   SOVERSION ${CMAKE_PROJECT_VERSION_MAJOR}
++   SOVERSION 6
+    PREFIX libkwinft-
+ )
+ 
+diff --git a/lib/base/CMakeLists.txt b/lib/base/CMakeLists.txt
+index 80431eb7f7..8caaeb56cf 100644
+--- a/lib/base/CMakeLists.txt
++++ b/lib/base/CMakeLists.txt
+@@ -137,7 +137,7 @@ target_sources(base-wl
+ 
+ set_target_properties(base base-x11 base-wl PROPERTIES
+    VERSION ${CMAKE_PROJECT_VERSION}
+-   SOVERSION ${CMAKE_PROJECT_VERSION_MAJOR}
++   SOVERSION 6
+    PREFIX libkwinft-
+ )
+ 
+diff --git a/lib/debug/CMakeLists.txt b/lib/debug/CMakeLists.txt
+index 31d66cfa64..a7b16458d9 100644
+--- a/lib/debug/CMakeLists.txt
++++ b/lib/debug/CMakeLists.txt
+@@ -66,7 +66,7 @@ target_sources(debug-wl
+ 
+ set_target_properties(debug-common debug-wl PROPERTIES
+   VERSION ${CMAKE_PROJECT_VERSION}
+-  SOVERSION ${CMAKE_PROJECT_VERSION_MAJOR}
++  SOVERSION 6
+   PREFIX libkwinft-
+ )
+ 
+diff --git a/lib/desktop/CMakeLists.txt b/lib/desktop/CMakeLists.txt
+index 9de7754e43..6bf81dbaf7 100644
+--- a/lib/desktop/CMakeLists.txt
++++ b/lib/desktop/CMakeLists.txt
+@@ -60,7 +60,7 @@ target_sources(desktop-kde
+ 
+ set_target_properties(desktop desktop-kde PROPERTIES
+   VERSION ${CMAKE_PROJECT_VERSION}
+-  SOVERSION ${CMAKE_PROJECT_VERSION_MAJOR}
++  SOVERSION 6
+   PREFIX libkwinft-
+ )
+ 
+diff --git a/lib/input/CMakeLists.txt b/lib/input/CMakeLists.txt
+index e8539550e0..f00bfd3311 100644
+--- a/lib/input/CMakeLists.txt
++++ b/lib/input/CMakeLists.txt
+@@ -187,7 +187,7 @@ target_sources(input-wl
+ 
+ set_target_properties(input input-x11-backend input-wl PROPERTIES
+   VERSION ${CMAKE_PROJECT_VERSION}
+-  SOVERSION ${CMAKE_PROJECT_VERSION_MAJOR}
++  SOVERSION 6
+   PREFIX libkwinft-
+ )
+ 
+diff --git a/lib/render/CMakeLists.txt b/lib/render/CMakeLists.txt
+index bada954880..15a1c23d5d 100644
+--- a/lib/render/CMakeLists.txt
++++ b/lib/render/CMakeLists.txt
+@@ -270,7 +270,7 @@ target_sources(render-wl
+ 
+ set_target_properties(render render-x11 render-x11-backend render-wl PROPERTIES
+   VERSION ${CMAKE_PROJECT_VERSION}
+-  SOVERSION ${CMAKE_PROJECT_VERSION_MAJOR}
++  SOVERSION 6
+   PREFIX libkwinft-
+ )
+ 
+diff --git a/lib/script/CMakeLists.txt b/lib/script/CMakeLists.txt
+index 2d3c809d2a..52ff62ff60 100644
+--- a/lib/script/CMakeLists.txt
++++ b/lib/script/CMakeLists.txt
+@@ -71,7 +71,7 @@ target_sources(script
+ 
+ set_target_properties(script PROPERTIES
+   VERSION ${CMAKE_PROJECT_VERSION}
+-  SOVERSION ${CMAKE_PROJECT_VERSION_MAJOR}
++  SOVERSION 6
+   PREFIX libkwinft-
+ )
+ 
+diff --git a/lib/utils/CMakeLists.txt b/lib/utils/CMakeLists.txt
+index 2cb9ab9e15..c108a36516 100644
+--- a/lib/utils/CMakeLists.txt
++++ b/lib/utils/CMakeLists.txt
+@@ -19,7 +19,7 @@ target_sources(utils
+ 
+ set_target_properties(utils PROPERTIES
+   VERSION ${CMAKE_PROJECT_VERSION}
+-  SOVERSION ${CMAKE_PROJECT_VERSION_MAJOR}
++  SOVERSION 6
+   PREFIX libkwinft-
+ )
+ 
+diff --git a/lib/win/CMakeLists.txt b/lib/win/CMakeLists.txt
+index 8031c606fa..5094828f0c 100644
+--- a/lib/win/CMakeLists.txt
++++ b/lib/win/CMakeLists.txt
+@@ -358,7 +358,7 @@ target_sources(win-wl
+ 
+ set_target_properties(win win-x11 win-x11-backend win-wl PROPERTIES
+    VERSION ${CMAKE_PROJECT_VERSION}
+-   SOVERSION ${CMAKE_PROJECT_VERSION_MAJOR}
++   SOVERSION 6
+    PREFIX libkwinft-
+ )
+ 
+diff --git a/lib/xwl/CMakeLists.txt b/lib/xwl/CMakeLists.txt
+index 1de41551d6..3dfd71c53d 100644
+--- a/lib/xwl/CMakeLists.txt
++++ b/lib/xwl/CMakeLists.txt
+@@ -46,7 +46,7 @@ target_sources(xwayland
+ 
+ set_target_properties(xwayland PROPERTIES
+   VERSION ${CMAKE_PROJECT_VERSION}
+-  SOVERSION ${CMAKE_PROJECT_VERSION_MAJOR}
++  SOVERSION 6
+   PREFIX libkwinft-
+ )
+ 
