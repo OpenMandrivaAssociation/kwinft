@@ -1,3 +1,5 @@
+%global optflags %{optflags} -I%{_includedir} -I%{_includedir}/wayland
+
 # Internal QML imports
 %global __requires_exclude qt6qmlimport\\(org\\.kde\\.kwin\\.3.*
 # %%global __requires_exclude qmlimport\\((org\\.kde\\.private\\.kcms\\.kwin\\.effects|org\\.kde\\.kcms\\.kwinrules|org\\.kde\\.kwin\\.private\\.overview|org\\.kde.kwin\\.private\\.desktopgrid|org\\.kde\\.KWin\\.Effect\\.WindowView|org\\.kde\\.kwin\\.kwinxwaylandsettings).*
