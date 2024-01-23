@@ -15,7 +15,7 @@ Group:          System/GUI/KDE
 URL:            https://gitlab.com/kwinft/%{name}
 Source:         %{url}/-/archive/%{commit}/%{name}-%{commit}.tar.bz2
 Patch1:         soversion.patch
-Patch2:         path.patch
+#Patch2:         path.patch
 BuildRequires:  fdupes
 BuildRequires:  cmake(Catch2)
 BuildRequires:  cmake(Qt6)
