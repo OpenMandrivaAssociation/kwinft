@@ -183,6 +183,8 @@ independent libwayland wrapping Qt/C++ library Wrapland.
 sed -i 's#env python3$#python3#' kconf_update/kwin-6.0-overview-activities-shortcuts.py
 
 %build
+export CC=gcc
+export CXX=g++
 # fix fatal error: wayland-server-core.h: No such file or directory
 export CFLAGS="%{optflags} -I%{_includedir} -I%{_includedir}/wayland"
 #export CXXFLAGS="${CFLAGS}"
