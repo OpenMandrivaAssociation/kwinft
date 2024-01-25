@@ -198,13 +198,13 @@ rm -rf %{buildroot}%{_kf6_sharedir}/locale
 %postun
 %{systemd_user_postun plasma-kwin_wayland.service}
 
-%preun x11
+%preun %{name}
 %{systemd_user_preun plasma-kwin_x11.service}
 
-%post x11
+%post %{name}
 %{systemd_user_post plasma-kwin_x11.service}
 
-%postun x11
+%postun %{name}
 %{systemd_user_postun plasma-kwin_x11.service}
 
 %files
