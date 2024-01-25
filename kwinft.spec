@@ -118,6 +118,7 @@ Requires:       kf6-kitemmodels-imports
 Requires:       plasma6-framework-components
 Requires:       qt6-declarative-imports
 Requires:       qt6-multimedia-imports
+Requires:       x11-server-xorg
 # /SECTION
 # For post and verifyscript
 Requires(post): permissions
@@ -144,17 +145,6 @@ KWinFT (KWin Fast Track) is an easy to use, but flexible, composited window mana
 windowing systems (Wayland, X11) on Linux.
 The KWinFT project consists of the window manager KWinFT and the accompanying but
 independent libwayland wrapping Qt/C++ library Wrapland.
-
-%package x11
-Summary:        KDE Window Manager for X11
-Conflicts:      kwin5
-Conflicts:      kwin6
-Requires:       xorg-x11-server
-Requires:       %{name} = %{version}
-
-%description x11
-KWinFT is Plasma window manager.
-This package provides the X11 window manager.
 
 %package -n libkwinft6
 Summary:        KWinFT library
@@ -208,7 +198,6 @@ rm -rf %{buildroot}%{_kf6_sharedir}/locale
 %postun
 %{systemd_user_postun plasma-kwin_wayland.service}
 
-
 %preun x11
 %{systemd_user_preun plasma-kwin_x11.service}
 
@@ -220,11 +209,53 @@ rm -rf %{buildroot}%{_kf6_sharedir}/locale
 
 %files
 %license LICENSE*
-
-%files x11
+%doc %{_doc}/doc/HTML/en/kcontrol/
+%{_userunitdir}/plasma-kwin_wayland.service
+%{_userunitdir}/plasma-kwin_x11.service
+%{_libexecdir}/kwin-applywindowdecoration
+%{_libexecdir}/kwin_killer_helper
+%{_bindir}/kwin_x11
+%{_bindir}/kwin_wayland
+%{_bindir}/kwin_wayland_wrapper
+%{_datadir}/applications/kcm_kwin_effects.desktop
+%{_datadir}/applications/kcm_kwin_scripts.desktop
+%{_datadir}/applications/kcm_kwin_virtualdesktops.desktop
+%{_datadir}/applications/kcm_kwindecoration.desktop
+%{_datadir}/applications/kcm_kwinoptions.desktop
+%{_datadir}/applications/kcm_kwinrules.desktop
+%{_datadir}/applications/kcm_kwintabbox.desktop
+%{_datadir}/applications/kwincompositing.desktop
+%{_datadir}/config.kcfg/kwin_colorcorrect.kcfg
+%{_datadir}/config.kcfg/kwindecorationsettings.kcfg
+%{_datadir}/config.kcfg/virtualdesktopssettings.kcfg
+%{_datadir}/dbus-1/interfaces/org.kde.KWin.VirtualDesktopManager.xml
+%{_datadir}/share/dbus-1/interfaces/org.kde.KWin.xml
+%{_datadir}/dbus-1/interfaces/org.kde.kwin.ColorCorrect.xml
+%{_datadir}/dbus-1/interfaces/org.kde.kwin.Compositing.xml
+%{_datadir}/dbus-1/interfaces/org.kde.kwin.InputDevice.xml
+%{_datadir}/dbus-1/interfaces/org.kde.kwin.VirtualKeyboard.xml
+%{_datadir}/kconf_update/kwin-6.0-overview-activities-shortcuts.py
+%{_datadir}/kconf_update/kwin.upd
+%{_datadir}/knotifications6/kwin.notifyrc
+%{_datadir}/knsrcfiles/
+%{_datadir}/kwin/
+%{_datadir}/qlogging-categories6/org_kde_kwin.categories
+%{_iconsdir}/hicolor/*x*/apps/kwin.png
+%{_iconsdir}/hicolor/scalable/apps/kwin.svgz
 
 %files -n libkwinft6
-
+%{_libdir}/kconf_update_bin/kwin5_update_default_rules
+%{_libdir}/libbase-x11-backend.so
+%{_libdir}/libkcmkwincommon.so.*
+%{_libdir}/libkwinft*
+%{_libdir}/plugins/kf6/packagestructure/
+%{_libdir}/plugins/kwin/effects/
+%{_libdir}/plugins/org.kde.kdecoration2.kcm/kcm_auroraedecoration.so
+%{_libdir}/plugins/org.kde.kdecoration2/org.kde.kwin.aurorae.so
+%{_libdir}/plugins/plasma/kcms/systemsettings*
+%{_libdir}/qml/org/kde/kwin/
 
 %files devel
-
+%{_includedir}/kwinft/
+%{_libdir}/cmake/KWinDBusInterface/KWinDBusInterfaceConfig.cmake
+%{_libdir}/cmake/kwinft/
