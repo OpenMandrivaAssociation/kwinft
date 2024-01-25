@@ -15,7 +15,7 @@ Group:          System/GUI/KDE
 URL:            https://gitlab.com/kwinft/%{name}
 Source:         %{url}/-/archive/%{commit}/%{name}-%{commit}.tar.bz2
 Patch1:         soversion.patch
-#Patch2:         path.patch
+
 BuildRequires:  fdupes
 BuildRequires:  cmake(Catch2)
 BuildRequires:  cmake(Qt6)
@@ -198,13 +198,13 @@ rm -rf %{buildroot}%{_kf6_sharedir}/locale
 %postun
 %{systemd_user_postun plasma-kwin_wayland.service}
 
-%preun %{name}
+%preun
 %{systemd_user_preun plasma-kwin_x11.service}
 
-%post %{name}
+%post
 %{systemd_user_post plasma-kwin_x11.service}
 
-%postun %{name}
+%postun
 %{systemd_user_postun plasma-kwin_x11.service}
 
 %files
