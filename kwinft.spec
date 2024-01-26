@@ -210,13 +210,8 @@ rm -rf %{buildroot}%{_kf6_sharedir}/locale
 %files
 %license LICENSE*
 %doc %{_doc}/doc/HTML/en/kcontrol/
-%{_userunitdir}/plasma-kwin_wayland.service
-%{_userunitdir}/plasma-kwin_x11.service
 %{_libexecdir}/kwin-applywindowdecoration
 %{_libexecdir}/kwin_killer_helper
-%{_bindir}/kwin_x11
-%{_bindir}/kwin_wayland
-%{_bindir}/kwin_wayland_wrapper
 %{_datadir}/applications/kcm_kwin_effects.desktop
 %{_datadir}/applications/kcm_kwin_scripts.desktop
 %{_datadir}/applications/kcm_kwin_virtualdesktops.desktop
@@ -242,6 +237,15 @@ rm -rf %{buildroot}%{_kf6_sharedir}/locale
 %{_datadir}/qlogging-categories6/org_kde_kwin.categories
 %{_iconsdir}/hicolor/*x*/apps/kwin.png
 %{_iconsdir}/hicolor/scalable/apps/kwin.svgz
+
+%files -n x11
+%{_bindir}/kwin_x11
+%{_userunitdir}/plasma-kwin_x11.service
+
+%files -n wayland
+%{_bindir}/kwin_wayland
+%{_bindir}/kwin_wayland_wrapper
+%{_userunitdir}/plasma-kwin_wayland.service
 
 %files -n libkwinft6
 %{_libdir}/kconf_update_bin/kwin5_update_default_rules
