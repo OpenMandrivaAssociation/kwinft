@@ -232,7 +232,7 @@ rm -rf %{buildroot}%{_kf6_sharedir}/locale
 
 %files
 %license LICENSE*
-%doc %{_doc}/doc/HTML/en/kcontrol/
+#doc %{_doc}/doc/HTML/en/kcontrol/
 %{_libexecdir}/kwin-applywindowdecoration
 %{_libexecdir}/kwin_killer_helper
 %{_datadir}/applications/kcm_kwin_effects.desktop
@@ -247,7 +247,7 @@ rm -rf %{buildroot}%{_kf6_sharedir}/locale
 %{_datadir}/config.kcfg/kwindecorationsettings.kcfg
 %{_datadir}/config.kcfg/virtualdesktopssettings.kcfg
 %{_datadir}/dbus-1/interfaces/org.kde.KWin.VirtualDesktopManager.xml
-%{_datadir}/share/dbus-1/interfaces/org.kde.KWin.xml
+%{_datadir}/dbus-1/interfaces/org.kde.KWin.xml
 %{_datadir}/dbus-1/interfaces/org.kde.kwin.ColorCorrect.xml
 %{_datadir}/dbus-1/interfaces/org.kde.kwin.Compositing.xml
 %{_datadir}/dbus-1/interfaces/org.kde.kwin.InputDevice.xml
