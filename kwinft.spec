@@ -153,30 +153,30 @@ Conflicts:      libkwin6
 %description -n libkwinft6
 This package provides the kWinFT library.
 
-%package x11
+%package -n x11
 Summary:        KDE Window Manager for X11
 Conflicts:      kwin5
 Conflicts:      kwin6
 Requires:       xorg-x11-server
 Requires:       %{name} = %{version}
 
-%description x11
+%description -n x11
 KWinFT is Plasma window manager.
 This package provides the X11 window manager.
 
-%package wayland
+%package -n wayland
 Summary:        KDE Window Manager for X11
 Conflicts:      kwin5
 Conflicts:      kwin6
 Requires:       xorg-x11-server
 Requires:       %{name} = %{version}
 
-%description wayland
+%description -n wayland
 KWinFT is Plasma window manager.
 This package provides the X11 window manager.
 
 
-%package devel
+%package -n devel
 Summary:        KWinFT: Build Environment
 Requires:       libkwinft6 = %{version}
 Requires:       kdecoration6-devel
@@ -184,7 +184,7 @@ Requires:       pkgconfig(epoxy)
 Conflicts:      kdebase4-workspace-devel
 Conflicts:      kwin5-devel
 
-%description devel
+%description -n devel
 KWinFT (KWin Fast Track) is an easy to use, but flexible, composited window manager for X.Org
 windowing systems (Wayland, X11) on Linux.
 The KWinFT project consists of the window manager KWinFT and the accompanying but
@@ -282,7 +282,7 @@ rm -rf %{buildroot}%{_kf6_sharedir}/locale
 %{_libdir}/plugins/plasma/kcms/systemsettings*
 %{_libdir}/qml/org/kde/kwin/
 
-%files devel
+%files -n devel
 %{_includedir}/kwinft/
 %{_libdir}/cmake/KWinDBusInterface/KWinDBusInterfaceConfig.cmake
 %{_libdir}/cmake/kwinft/
