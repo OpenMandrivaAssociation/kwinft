@@ -153,6 +153,29 @@ Conflicts:      libkwin6
 %description -n libkwinft6
 This package provides the kWinFT library.
 
+%package x11
+Summary:        KDE Window Manager for X11
+Conflicts:      kwin5
+Conflicts:      kwin6
+Requires:       xorg-x11-server
+Requires:       %{name} = %{version}
+
+%description x11
+KWinFT is Plasma window manager.
+This package provides the X11 window manager.
+
+%package wayland
+Summary:        KDE Window Manager for X11
+Conflicts:      kwin5
+Conflicts:      kwin6
+Requires:       xorg-x11-server
+Requires:       %{name} = %{version}
+
+%description wayland
+KWinFT is Plasma window manager.
+This package provides the X11 window manager.
+
+
 %package devel
 Summary:        KWinFT: Build Environment
 Requires:       libkwinft6 = %{version}
@@ -188,23 +211,23 @@ export CFLAGS="%{optflags} -I%{_includedir} -I%{_includedir}/wayland"
 rm -rf %{buildroot}%{_kf6_sharedir}/doc
 rm -rf %{buildroot}%{_kf6_sharedir}/locale
 
-%preun
+%preun wayland
 %{systemd_user_preun plasma-kwin_wayland.service}
 
-%post
+%post wayland
 %set_permissions %{_kf6_bindir}/kwin_wayland
 %{systemd_user_post plasma-kwin_wayland.service}
 
-%postun
+%postun wayland
 %{systemd_user_postun plasma-kwin_wayland.service}
 
-%preun
+%preun x11
 %{systemd_user_preun plasma-kwin_x11.service}
 
-%post
+%post x11
 %{systemd_user_post plasma-kwin_x11.service}
 
-%postun
+%postun x11
 %{systemd_user_postun plasma-kwin_x11.service}
 
 %files
