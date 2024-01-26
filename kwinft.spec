@@ -232,7 +232,7 @@ rm -rf %{buildroot}%{_kf6_sharedir}/locale
 
 %files
 %license LICENSE*
-#doc %{_doc}/doc/HTML/en/kcontrol/
+%doc %{_datadir}/doc/HTML/en/kcontrol/
 %{_libexecdir}/kwin-applywindowdecoration
 %{_libexecdir}/kwin_killer_helper
 %{_datadir}/applications/kcm_kwin_effects.desktop
