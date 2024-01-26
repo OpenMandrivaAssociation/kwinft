@@ -211,23 +211,23 @@ export CFLAGS="%{optflags} -I%{_includedir} -I%{_includedir}/wayland"
 rm -rf %{buildroot}%{_kf6_sharedir}/doc
 rm -rf %{buildroot}%{_kf6_sharedir}/locale
 
-%preun wayland
+%preun -n wayland
 %{systemd_user_preun plasma-kwin_wayland.service}
 
-%post wayland
+%post -n wayland
 %set_permissions %{_kf6_bindir}/kwin_wayland
 %{systemd_user_post plasma-kwin_wayland.service}
 
-%postun wayland
+%postun -n wayland
 %{systemd_user_postun plasma-kwin_wayland.service}
 
-%preun x11
+%preun -n x11
 %{systemd_user_preun plasma-kwin_x11.service}
 
-%post x11
+%post -n x11
 %{systemd_user_post plasma-kwin_x11.service}
 
-%postun x11
+%postun -n x11
 %{systemd_user_postun plasma-kwin_x11.service}
 
 %files
