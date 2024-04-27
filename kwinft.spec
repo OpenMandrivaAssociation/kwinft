@@ -194,7 +194,7 @@ independent libwayland wrapping Qt/C++ library Wrapland.
 %prep
 %autosetup -p1 -n theseus-ship-%{version}
 
-sed -i 's#env python3$#python3#' kconf_update/kwin-6.0-overview-activities-shortcuts.py
+#sed -i 's#env python3$#python3#' kconf_update/kwin-6.0-overview-activities-shortcuts.py
 
 %build
 export CC=gcc
