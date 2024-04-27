@@ -7,14 +7,15 @@
 #%%bcond_without  lang
 
 Name:           kwinft
-Version:        5.92.90
+Version:        6.0.0
 Release:        1
 Summary:        Fast Track reboot of KWin
 License:        GPL-2.0-or-later AND GPL-3.0-or-later
 Group:          System/GUI/KDE
 URL:            https://gitlab.com/kwinft/%{name}
-Source:         %{url}/-/archive/%{commit}/%{name}-%{commit}.tar.bz2
-Patch1:         soversion.patch
+#Source0:         https://gitlab.com/kwinft/kwinft/-/archive/%{commit}/%{name}-%{commit}.tar.bz2
+Source0:        https://github.com/winft/theseus-ship/archive/refs/tags/v%{version}/theseus-ship-%{version}.tar.gz
+#Patch1:         soversion.patch
 
 BuildRequires:  fdupes
 BuildRequires:  cmake(Catch2)
@@ -191,7 +192,7 @@ The KWinFT project consists of the window manager KWinFT and the accompanying bu
 independent libwayland wrapping Qt/C++ library Wrapland.
 
 %prep
-%autosetup -p1 -n %{name}-%{commit}
+%autosetup -p1 -n theseus-ship-%{version}
 
 sed -i 's#env python3$#python3#' kconf_update/kwin-6.0-overview-activities-shortcuts.py
 
